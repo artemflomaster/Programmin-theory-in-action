@@ -5,12 +5,16 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject pillar;
+    public GameObject cube;
+
+    private int cubesAmount = 10;
   
         
     void Start()
          
     {
         CreateFourOOPPillars();  //ABSTRACTION
+        CreateCubes();
     }
 
     private void CreateFourOOPPillars()
@@ -71,10 +75,19 @@ public class SpawnManager : MonoBehaviour
             Debug.Log("Wrong argument in pillar ID");
             return Color.black;
         }
-
-
-
-
     }
-
+    private void CreateCubes()
+    {
+        for (int i = 0; i <= cubesAmount; i++)
+        {
+            Instantiate(cube, CubePos(), transform.rotation);
+        }
+    }
+    private Vector3 CubePos()
+    {
+        float x = Random.Range(0.7f, 1.3f);
+        float y = -0.45f + Random.Range(0f, 1f);
+        float z = 0.75f;
+        return new Vector3(x, y, z);
+    }
 }
