@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
-    private float cubeMass = 0.1f;
+    public float cubeMass { get; private set; } //INCAPSULATION
 
     private void Start()
     {
-        gameObject.GetComponent<Rigidbody>().mass = cubeMass;
+        SetParameters();        
     }
 
  
@@ -29,4 +29,11 @@ public class Cube : MonoBehaviour
         return new Color32(r, g, b, 255);
         
     }
+
+    public virtual void SetParameters()
+    {
+        cubeMass = 0.1f;
+        gameObject.GetComponent<Rigidbody>().mass = cubeMass;
+    }
 }
+

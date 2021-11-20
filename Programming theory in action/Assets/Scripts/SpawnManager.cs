@@ -7,7 +7,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject pillar;
     public GameObject cube;
 
-    private int cubesAmount = 10;
+    private int cubesAmount = 20;
   
         
     void Start()
@@ -85,9 +85,12 @@ public class SpawnManager : MonoBehaviour
     }
     private Vector3 CubePos()
     {
-        float x = Random.Range(0.7f, 1.3f);
+        float x = Random.Range(0.7f, 1.0f);
         float y = -0.45f + Random.Range(0f, 1f);
         float z = 0.75f;
         return new Vector3(x, y, z);
     }
 }
+
+
+
