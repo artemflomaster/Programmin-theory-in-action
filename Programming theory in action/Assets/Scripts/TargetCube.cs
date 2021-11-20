@@ -6,6 +6,7 @@ public class TargetCube : Cube //INHERITANCE
 {
 
     public ParticleSystem bigBoom;
+    public GameObject gameOver;
 
     void Start()
     {
@@ -25,14 +26,14 @@ public class TargetCube : Cube //INHERITANCE
             Vector3 point1 = collision.contacts[0].point;
             collision.gameObject.GetComponent<Rigidbody>().AddExplosionForce(200, point1, 1f, 1f, ForceMode.Impulse);
             Explosion();
-            Destroy(gameObject);
+            
         }
     }
     private void Explosion()
     {
         Vector3 instantPos = transform.position;
         Instantiate(bigBoom, instantPos, transform.rotation);
-
         Destroy(gameObject);
+        gameOver.SetActive(true);
     }
 }

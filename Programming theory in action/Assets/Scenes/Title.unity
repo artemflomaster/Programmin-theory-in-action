@@ -718,7 +718,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Controls: UP, DOWN and SPACE'
+  m_Text: Destroy BIG BLACK cube
 --- !u!222 &815831805
 CanvasRenderer:
   m_ObjectHideFlags: 0
